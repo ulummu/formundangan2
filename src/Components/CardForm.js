@@ -332,6 +332,9 @@ export default function CardForm(props) {
               Form Data Undangan
             </Card.Header>
             <Card.Body>
+              <Form.Label className="judul">
+                Silakan Isi Data Secara Lengkap
+              </Form.Label>
               <Form
                 className="form"
                 noValidate
@@ -816,8 +819,8 @@ export default function CardForm(props) {
                             </FloatingLabel>
                             <FloatingLabel
                               controlId="floatingInput"
-                              label="Maps Acara"
-                              className="mb-3"
+                              label="Link Google Maps"
+                              className="mb-1"
                             >
                               <Form.Control
                                 name="mapsAkad"
@@ -830,6 +833,17 @@ export default function CardForm(props) {
                                 Maps Belum Diisi
                               </Form.Control.Feedback>
                             </FloatingLabel>
+                            <Form.Label className="labelTutor">
+                              Tutorial Salin Maps{" "}
+                              <a
+                                className="tutor"
+                                href="https://google.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                Klik Disini
+                              </a>
+                            </Form.Label>
                           </Accordion.Body>
                         </Accordion.Item>
                         <Accordion.Item eventKey="1">
@@ -977,8 +991,8 @@ export default function CardForm(props) {
                             </FloatingLabel>
                             <FloatingLabel
                               controlId="floatingInput"
-                              label="Maps Acara"
-                              className="mb-3"
+                              label="Link Google Maps"
+                              className="mb-1"
                             >
                               <Form.Control
                                 name="mapsResepsi"
@@ -991,6 +1005,17 @@ export default function CardForm(props) {
                                 Maps Belum Diisi
                               </Form.Control.Feedback>
                             </FloatingLabel>
+                            <Form.Label className="labelTutor">
+                              Tutorial Salin Maps{" "}
+                              <a
+                                className="tutor"
+                                href="https://google.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                Klik Disini
+                              </a>
+                            </Form.Label>
                           </Accordion.Body>
                         </Accordion.Item>
                       </Accordion>
@@ -1021,6 +1046,17 @@ export default function CardForm(props) {
                           Musik Belum Diisi
                         </Form.Control.Feedback>
                       </Form.Group>
+                      <Form.Label className="labelTutor">
+                        Tutorial Salin Backsound{" "}
+                        <a
+                          className="tutor"
+                          href="https://google.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Klik Disini
+                        </a>
+                      </Form.Label>
                     </Accordion.Body>
                   </Accordion.Item>
                 </Accordion>
