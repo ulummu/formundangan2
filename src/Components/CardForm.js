@@ -837,7 +837,7 @@ export default function CardForm(props) {
                               Tutorial Salin Maps{" "}
                               <a
                                 className="tutor"
-                                href="https://google.com"
+                                href="https://www.youtube.com/watch?v=07ihVwltHvQ"
                                 target="_blank"
                                 rel="noopener noreferrer"
                               >
@@ -1009,7 +1009,7 @@ export default function CardForm(props) {
                               Tutorial Salin Maps{" "}
                               <a
                                 className="tutor"
-                                href="https://google.com"
+                                href="https://www.youtube.com/watch?v=07ihVwltHvQ"
                                 target="_blank"
                                 rel="noopener noreferrer"
                               >
@@ -1050,7 +1050,7 @@ export default function CardForm(props) {
                         Tutorial Salin Backsound{" "}
                         <a
                           className="tutor"
-                          href="https://google.com"
+                          href="https://www.youtube.com/watch?v=DmWVqg3mfps"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
