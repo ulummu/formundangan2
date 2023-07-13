@@ -12,6 +12,7 @@ import {
 } from "react-bootstrap";
 import "./CardForm.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { useEffect } from "react";
 
 const initialValues = {
   tema: "",
@@ -82,7 +83,6 @@ export default function CardForm(props) {
   const [temp, setTemp] = useState("");
   const [filter, setFilter] = useState("");
 
-  // useEffect(() => {}, [dataGold]);
   const capitalFirstWord = (e) => {
     var words = e.split(" ");
     for (var i = 0; i < words.length; i++) {
@@ -105,11 +105,11 @@ export default function CardForm(props) {
           values.bahasa +
           "%0a%0a3. Paket Undangan Web : " +
           values.paket +
-          "%0a%0a4. Filter Instagram : " +
+          "%0a%0a4. Foto Undangan : " +
+          values.foto +
+          "%0a%0a5. Filter Instagram : " +
           values.pakaiFilter +
           filter +
-          "%0a%0a5. Penggunaan Foto : " +
-          values.foto +
           "%0a%0a6. Nama yang didahulukan : " +
           values.namaAwal +
           "%0a%0a7. Mempelai Wanita %0a-Nama Panggilan : " +
@@ -198,11 +198,11 @@ export default function CardForm(props) {
           values.bahasa +
           "%0a%0a3. Paket Undangan Web : " +
           values.paket +
-          "%0a%0a4. Filter Instagram : " +
+          "%0a%0a4. Foto Undangan: " +
+          values.foto +
+          "%0a%0a5. Filter Instagram : " +
           values.pakaiFilter +
           filter +
-          "%0a%0a5. Penggunaan Foto : " +
-          values.foto +
           "%0a%0a6. Nama yang didahulukan : " +
           values.namaAwal +
           "%0a%0a7. Mempelai Wanita %0a-Nama Panggilan : " +
@@ -256,6 +256,8 @@ export default function CardForm(props) {
           "%0a%0a10. Musik : " +
           values.musik;
       }
+    } else {
+      console.log("error");
     }
     // console.log(dataGold);
     event.preventDefault();
@@ -322,8 +324,8 @@ export default function CardForm(props) {
     } else {
       setDataResepsi("%0a-Acara : " + values.namaAcaraResepsi);
     }
-    if (!!values.nomorCatin) {
-      setNoCatin("%0a-Nomor Calon Pengantin : " + values.nomorCatin);
+    if (e.target.name === "nomorCatin") {
+      setNoCatin("%0a-Nomor Calon Pengantin : " + e.target.value);
     }
     if (dataGold === 1) {
       setTemp(encodeURI(values.loveStory));
@@ -345,7 +347,9 @@ export default function CardForm(props) {
       [name]: value,
     });
   };
-
+  // useEffect(() => {
+  //   handleInputChange;
+  // }, []);
   return (
     <Container>
       <Row>
@@ -437,6 +441,26 @@ export default function CardForm(props) {
                   </Form.Select>
                   <Form.Control.Feedback type="invalid">
                     Paket Belum Dipilih
+                  </Form.Control.Feedback>
+                </Form.Group>
+
+                <Form.Group className="mb-2">
+                  <Form.Label className="labelForm">Foto Undangan</Form.Label>
+                  <Form.Select
+                    name="foto"
+                    value={values.foto}
+                    onChange={handleInputChange}
+                    required
+                  >
+                    <option value="" disabled hidden>
+                      Pilih
+                    </option>
+                    <option value="Dengan Foto">Dengan Foto</option>
+                    <option value="Tanpa Foto">Tanpa Foto</option>
+                    <option value="Animasi">Animasi</option>
+                  </Form.Select>
+                  <Form.Control.Feedback type="invalid">
+                    Foto Belum Dipilih
                   </Form.Control.Feedback>
                 </Form.Group>
 
@@ -554,28 +578,6 @@ export default function CardForm(props) {
                     </Form.Group>
                   </Form.Group>
                 )}
-
-                <Form.Group className="mb-2">
-                  <Form.Label className="labelForm">
-                    Menggunakan Foto
-                  </Form.Label>
-                  <Form.Select
-                    name="foto"
-                    value={values.foto}
-                    onChange={handleInputChange}
-                    required
-                  >
-                    <option value="" disabled hidden>
-                      Pilih
-                    </option>
-                    <option value="Dengan Foto">Dengan Foto</option>
-                    <option value="Tanpa Foto">Tanpa Foto</option>
-                    <option value="Animasi">Animasi</option>
-                  </Form.Select>
-                  <Form.Control.Feedback type="invalid">
-                    Foto Belum Dipilih
-                  </Form.Control.Feedback>
-                </Form.Group>
 
                 <Form.Group className="mb-2">
                   <Form.Label className="labelForm">
